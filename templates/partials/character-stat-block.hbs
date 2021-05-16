@@ -1,0 +1,218 @@
+<section>
+    <div class="row">
+        <div class="col-6" style="margin-right: 5px;">
+            <h1>Énergies</h1>
+            <table>
+                <tr>
+                    <th>PV</th>
+                    <th>PM</th>
+                    <th>SI</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <div class="resource-content flexrow">
+                            <input type="text" name="data.PV.value" value="{{data.PV.value}}" data-dtype="Number" class="stat-css"/>
+                            /
+                            <input type="text" name="data.PV.max" value="{{data.PV.max}}" data-dtype="Number"  class="stat-css"/>
+                        </div>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <div class="resource-content flexrow">
+                            <input type="text" name="data.PM.value" value="{{data.PM.value}}" data-dtype="Number" class="stat-css"/>
+                            /
+                            <input type="text" name="data.PM.max" value="{{data.PM.max}}" data-dtype="Number"  class="stat-css"/>
+                        </div>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <div class="resource-content flexrow">
+                            <input type="text" name="data.SI.value" value="{{data.SI.value}}" data-dtype="Number" class="stat-css"/>
+                            /
+                            <input type="text" name="data.SI.max" value="{{data.SI.max}}" data-dtype="Number"  class="stat-css"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <h1>Statistiques</h1>
+            <table>
+                <tr>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.FOR.value}}">FOR</a>{{else}}FOR{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.MAG.value}}">MAG</a>{{else}}MAG{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.AGI.value}}">AGI</a>{{else}}AGI{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.SOC.value}}">SOC</a>{{else}}SOC{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.INT.value}}">INT</a>{{else}}INT{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.SAV.value}}">SAV</a>{{else}}SAV{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.OY.value}}">OY</a>{{else}}OY{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.PER.value}}">PER</a>{{else}}PER{{/if}}</th>
+                    <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.COR.value}}">COR</a>{{else}}COR{{/if}}</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.FOR.value", type="text", value="{{data.FOR.value}}" class="stat-css",
+                        data-dtype="Number"/>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.MAG.value", type="text", value="{{data.MAG.value}}" class="stat-css",
+                        data-dtype="Number"/>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.AGI.value", type="text", value="{{data.AGI.value}}" class="stat-css",
+                        data-dtype="Number"/>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.SOC.value", type="text", value="{{data.SOC.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.INT.value", type="text", value="{{data.INT.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.SAV.value", type="text", value="{{data.SAV.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.OY.value", type="text", value="{{data.OY.value}}", class="stat-css"
+                        data-dtype="Number"/>
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.PER.value", type="text", value="{{data.PER.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.COR.value", type="text", value="{{data.COR.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                </tr>
+            </table>
+            <h1>Modificateurs</h1>
+            <table>
+                <tr>
+                    <th>DEF</th>
+                    <th>RES</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.DEF.value", type="text", value="{{data.DEF.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                    <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                        <input name="data.RES.value", type="text", value="{{data.RES.value}}" class="stat-css",
+                        data-dtype="Number" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6" style="margin-left: 5px;">
+            <h1>Spécialisations</h1>
+            <table>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Cuisine.value}}", data-test="Cuisine">Cuisine</a>{{else}}Cuisine{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Cuisine.value" style="width: 99.3%;">
+                            {{#select data.Cuisine.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Forge.value}}", data-test="Forge">Forge</a>{{else}}Forge{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Forge.value" style="width: 99.3%;">
+                            {{#select data.Forge.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Artisanat.value}}", data-test="Artisanat">Artisanat</a>{{else}}Artisanat{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Artisanat.value" style="width: 99.3%;">
+                            {{#select data.Artisanat.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select></td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Chasse.value}}", data-test="Chasse">Chasse</a>{{else}}Chasse{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Chasse.value" style="width: 99.3%;">
+                            {{#select data.Chasse.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Pêche.value}}", data-test="Pêche">Pêche</a>{{else}}Pêche{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Pêche.value" style="width: 99.3%;">
+                            {{#select data.Pêche.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.BiologieAnimale.value}}", data-test="Biologie Animale">Biologie Animale</a>{{else}}Biologie Animale{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.BiologieAnimale.value" style="width: 99.3%;">
+                            {{#select data.BiologieAnimale.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.BiologieVégétale.value}}", data-test="Biologie Végétale">Biologie Végétale</a>{{else}}Biologie Végétale{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.BiologieVégétale.value" style="width: 99.3%;">
+                            {{#select data.BiologieVégétale.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.Technologie.value}}", data-test="Technologie">Technologie</a>{{else}}Technologie{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.Technologie.value" style="width: 99.3%;">
+                            {{#select data.Technologie.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left: 5px; padding-right: 5px;">{{#if owner}}<a class="spé-test" data-seuil="{{data.SensDuCommerce.value}}", data-test="Sens du Commerce">Sens du Commerce</a>{{else}}Sens du Commerce{{/if}}</th>
+                    <td style="padding-left: 5px; padding-right: 5px;">
+                        <select name="data.SensDuCommerce.value" style="width: 99.3%;">
+                            {{#select data.SensDuCommerce.value}}
+                            {{#each config.spes as |name type|}}
+                            <option value='{{name.valeur}}'>{{name.name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

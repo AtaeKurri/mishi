@@ -1,0 +1,122 @@
+{
+    "Actor": {
+        "types": ["personnage", "marchand"],
+        "templates": {
+            "commonStats": {
+                "DEF": 0,
+                "RES": 0,
+                "FOR": 0,
+                "MAG": 0,
+                "AGI": 0,
+                "SOC": 0,
+                "INT": 0,
+                "SAV": 0,
+                "OY": 0,
+                "PER": 0,
+                "COR": 0
+            },
+            "description": {
+                "titre": "",
+                "classe1": "",
+                "classe2": "",
+                "espece": "",
+                "pouvoir": "",
+                "paysorigine": "",
+                "magie": "",
+                "arme": "",
+                "armure": "",
+                "tete": "",
+                "accessoire": "",
+                "desc": ""
+            },
+            "sorts": {
+                "cpm": {
+                    "name": "",
+                    "description": ""
+                },
+                "cpc": {
+                    "name": "",
+                    "description": ""
+                }
+            },
+            "specialisations": {
+                "Cuisine": 0,
+                "Forge": 0,
+                "Artisanat": 0,
+                "Chasse": 0,
+                "Pêche": 0,
+                "BiologieAnimale": 0,
+                "BiologieVégétale": 0,
+                "Technologie": 0,
+                "SensDuCommerce": 0
+            }
+        },
+        "personnage": {
+            "templates": ["commonStats", "description", "sorts"],
+            "PV": {
+                "min": 0,
+                "value": 0,
+                "max": 0
+            },
+            "PM": {
+                "min": 0,
+                "value": 0,
+                "max": 0
+            },
+            "SI": {
+                "min": 0,
+                "value": 0,
+                "max": 0
+            },
+            "inventaire": ""
+        },
+        "marchand": {
+            "fiya": "",
+            "SOC": 0,
+            "SAV": 0
+        }
+    },
+    "Item": {
+        "types": ["Grimoire", "Objet", "Arme", "Armure", "Accessoire", "Sort"],
+        "templates": {
+            "stats": {
+                "Rareté": "Commun",
+                "Prix": "",
+                "Description": "",
+                "Quantite": 0,
+                "Equipe": "false"
+            }
+        },
+        "Grimoire": {
+            "templates": ["stats"],
+            "Magie": "Basique"
+        },
+        "Objet": {
+            "templates": ["stats"]
+        },
+        "Arme": {
+            "templates": ["stats"],
+            "Bonus": "Aucun",
+            "Jet": "1d100",
+            "Degats": "",
+            "Cout": 0
+        },
+        "Armure": {
+            "templates": ["stats"],
+            "DEF": 0,
+            "RES": 0,
+            "Bonus": "Aucun"  
+        },
+        "Accessoire": {
+            "templates": ["stats"],
+            "Bonus": "Aucun"
+        },
+        "Sort": {
+            "Description": "",
+            "Degats": "",
+            "Seuil": "80",
+            "Cout": "",
+            "Effets": ""
+        }
+    }
+}

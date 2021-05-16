@@ -1,0 +1,60 @@
+<section>
+    <h1>Jets de Classe</h1>
+    <div class="class-skills">
+        <table>
+            <tr style="text-align: center;">
+                {{#if data.classe1}}
+                <th style="width: 50%;"><a class="class-roll" data-class="{{data.classe1}}">{{getClassname data.classe1}}</a></th>
+                {{/if}}
+                {{#if data.classe2}}
+                <th style="width: 50%;"><a class="class-roll" data-class="{{data.classe2}}">{{getClassname data.classe2}}</a></th>
+                {{/if}}
+            </tr>
+        </table>
+    </div>
+    <h1>Compétences Primaires</h1>
+    <table>
+        <tr style="text-align: center;">
+            <th>Compétence Primaire Magique <a class="cp-roll" data-type="cpm"><i class="fas fa-dice"></i></a></th>
+            <th>Compétence Primaire Cristalisée <a class="cp-roll" data-type="cpc"><i class="fas fa-dice"></i></a></th>
+        </tr>
+        <tr>
+            <td>
+                <textarea name="data.cpm.description" rows="5" placeholder="Effets de la Compétence.">{{{data.cpm.description}}}</textarea>
+            </td>
+            <td>
+                <textarea name="data.cpc.description" rows="5" placeholder="Effets de la Compétence.">{{{data.cpc.description}}}</textarea>
+            </td>
+        </tr>
+    </table>
+    <h1>Sorts <a class="item-create" data-type="Sort"><i class="fas fa-plus"></i></a></h1>
+    <div class="sorts">
+        <table>
+            {{#each sorts as |sort id|}}
+            <tr>
+                <td style="width: 30%;">
+                    <div class="item" data-sortid="{{sort._id}}">
+                        <div style="padding-left: 10px;"><a class="sort-roll" data-sortid="{{sort._id}}" style="font-size: large;"><b>{{sort.name}}</b>
+                        <a class="sort-edit" data-sortid="{{sort._id}}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="item-delete" data-item-id="{{sort._id}}" style="padding-left: 10px;">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        </div>
+                        <p style="font-size: small;">
+                            {{#if sort.data.Cout}}<span style="padding-left: 15px;">Coût : <b>{{sort.data.Cout}}</b></span>{{/if}}
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{#if sort.data.Description}}<p>{{sort.data.Description}}</p>{{else}}<p>Aucune Description</p>{{/if}}
+                        {{#if sort.data.Effets}}<p><i>({{sort.data.Effets}})</i></p>{{/if}}
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+        </table>
+    </div>
+</section>

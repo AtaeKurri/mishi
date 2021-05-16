@@ -1,0 +1,185 @@
+<section>
+    <h1>Description</h1>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <td colspan="2"><input name="data.titre" type="text" value="{{data.titre}}" placeholder="Titre" class="stat-css"/></td>
+        </tr>
+        <tr>
+            <th>Classes</th>
+            <td>
+                <select name="data.classe1" style="width: 99.3%;">
+                    {{#select data.classe1}}
+                    {{#each config.classes as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <td>
+                <select name="data.classe2" style="width: 99.3%;">
+                    {{#select data.classe2}}
+                    {{#each config.classes as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Espèce</th>
+            <td>
+                <select name="data.espece" style="width: 99.3%;">
+                    {{#select data.espece}}
+                    {{#each config.Especes as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            <th>Pouvoir</th>
+            <td><input name="data.pouvoir" type="text" value="{{data.pouvoir}}" placeholder="Pouvoir" class="stat-css"/></td>
+        </tr>
+        <tr>
+            <th>Pays d'Origine</th>
+            <td><input name="data.paysorigine" type="text" value="{{data.paysorigine}}" placeholder="Pays d'Origine" class="stat-css"/></td>
+            <th>Magie</th>
+            <td>
+                <select name="data.magie" style="width: 99.3%;">
+                    {{#select data.magie}}
+                    {{#each config.Magies as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+        </tr>
+    </table>
+    <section>
+        <h1>Inventaire <small style="font-size: 15px;">(Drag et Drop pour ajouter un item)</small></h1>
+        <table>
+            <tr>
+                <th style="padding-left: 5px; padding-right: 5px;">Grimoire</th>
+                <td colspan="3" style="padding-left: 5px; padding-right: 5px;">
+                    {{#each grimoires as |grimoire id|}}
+                    <div class="item" data-item-id="{{grimoire._id}}">
+                        <div>
+                            <span><input class="inline-check-edit"
+                                        data-field="data.Equipe"
+                                        type="checkbox"
+                                        value="{{grimoire.data.Equipe}}"
+                                        data-dtype="Boolean"
+                                        {{checked grimoire.data.Equipe}}
+                                        style="height: 10px; width: 10px;"/> <b>{{grimoire.name}}</b></span>
+                            <a class="item-delete" data-item-id="{{grimoire._id}}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="text-flow">
+                                <i>{{grimoire.data.Description}}</i>
+                            </p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 5px; padding-right: 5px;">Arme</th>
+                <td style="width: 50%; padding-left: 5px; padding-right: 5px;">
+                    {{#each armes as |arme id|}}
+                    <div class="item" data-item-id="{{arme._id}}">
+                        <a class="item-roll"><i class="fas fa-dice"></i></a>
+                        <input class="inline-check-edit"
+                                data-field="data.Equipe"
+                                type="checkbox"
+                                value="{{arme.data.Equipe}}"
+                                data-dtype="Boolean"
+                                {{checked arme.data.Equipe}}
+                                style="height: 10px; width: 10px;"/>
+                        <b style="color: #{{getRarity arme.data.Rareté}};">{{arme.name}} <i style="font-size: 10px">({{arme.data.Rareté}})</i></b>
+                        <a class="item-delete" data-item-id="{{arme._id}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {{#if arme.data.Bonus}}
+                        <i>Bonus : {{arme.data.Bonus}}</i>
+                        {{/if}}
+                        <p class="text-flow"><i>{{arme.data.Description}}</i></p>
+                    </div>
+                    {{/each}}
+                </td>
+                <th style="padding-left: 5px; padding-right: 5px;">Armure</th>
+                <td style="width: 50%; padding-left: 5px; padding-right: 5px;">
+                    {{#each armures as |armure id|}}
+                    <div class="item" data-item-id="{{armure._id}}">
+                        <input class="inline-check-edit"
+                                data-field="data.Equipe"
+                                type="checkbox"
+                                value="{{armure.data.Equipe}}"
+                                data-dtype="Boolean"
+                                {{checked armure.data.Equipe}}
+                                style="height: 10px; width: 10px;"/>
+                        <b style="color: #{{getRarity armure.data.Rareté}};">{{armure.name}} <i style="font-size: 10px">({{armure.data.Rareté}})</i></b>
+                        <a class="item-delete" data-item-id="{{armure._id}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {{#if armure.data.Bonus}}
+                        <i>Bonus : {{armure.data.Bonus}}</i>
+                        {{/if}}
+                        <p class="text-flow"><i>{{armure.data.Description}}</i></p>
+                        <p><b>DEF</b> : +{{armure.data.DEF}} ; <b>RES</b> : +{{armure.data.RES}}</p>
+                    </div>
+                    {{/each}}
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 5px; padding-right: 5px;">Accessoire</th>
+                <td colspan="3" style="width: 50%; padding-left: 5px; padding-right: 5px;">
+                    {{#each accessoires as |accessoire id|}}
+                    <div class="item" data-item-id="{{accessoire._id}}">
+                        <input class="inline-check-edit"
+                                data-field="data.Equipe"
+                                type="checkbox"
+                                value="{{accessoire.data.Equipe}}"
+                                data-dtype="Boolean"
+                                {{checked accessoire.data.Equipe}}
+                                style="height: 10px; width: 10px;"/>
+                        <b style="color: #{{getRarity accessoire.data.Rareté}};">{{accessoire.name}} <i style="font-size: 10px">({{accessoire.data.Rareté}})</i></b>
+                        <a class="item-delete" data-item-id="{{accessoire._id}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {{#if accessoire.data.Bonus}}
+                        <i>Bonus : {{accessoire.data.Bonus}}</i>
+                        {{/if}}
+                        <p class="text-flow"><i>{{accessoire.data.Description}}</i></p>
+                    </div>
+                    {{/each}}
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 5px; padding-right: 5px;">Objets</th>
+                <td colspan="3" style="width: 50%; padding-left: 5px; padding-right: 5px;">
+                    {{#each objets as |objet id|}}
+                    {{#if (not objet.data.Equipe)}}<input class="inline-check-edit item"
+                            data-item-id="{{objet._id}}"
+                            data-field="data.Equipe"
+                            type="checkbox"
+                            value="{{objet.data.Equipe}}"
+                            data-dtype="Boolean"
+                            {{checked objet.data.Equipe}}
+                            style="height: 10px; width: 10px;"/>{{/if}}
+                    <b style="color: #{{getRarity objet.data.Rareté}};">{{objet.name}} <i style="font-size: 10px">({{objet.data.Rareté}})</i></b>
+                    <a class="item-delete" data-item-id="{{objet._id}}">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    ;
+                    {{/each}}
+                    <textarea name="data.inventaire" rows="4" placeholder="Inventaire du personnage" class="stat-css">{{{data.inventaire}}}</textarea>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <textarea name="data.desc" rows="8" placeholder="Description du personnage" class="stat-css">{{{data.desc}}}</textarea>
+</section>

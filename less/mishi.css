@@ -1,0 +1,87 @@
+.mishi.sheet.item form {
+  display: flex;
+  flex-direction: column;
+}
+.mishi.sheet.item .sheet-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mishi.sheet.item .sheet-content .editor {
+  height: 100%;
+}
+.dice-roll .CritSuccess {
+  color: #03b603;
+}
+.dice-roll .CritFail {
+  color: red;
+}
+.mishi.sheet.personnage .stat-css {
+  border: none;
+  background: none;
+}
+.mishi.sheet.personnage .stat-css:hover,
+.mishi.sheet.personnage .stat-css:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+.mishi.sheet.personnage .text-flow {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.mishi.sheet.personnage .text-flow:hover {
+  overflow: hidden;
+  display: block;
+  text-overflow: none;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: initial;
+}
+.mishi.sheet.personnage .row {
+  display: flex;
+  width: 100%;
+}
+.mishi.sheet.personnage .row::after {
+  clear: both;
+  content: "";
+}
+.mishi.sheet.personnage .col-1 {
+  width: 8.33%;
+}
+.mishi.sheet.personnage .col-2 {
+  width: 16.66%;
+}
+.mishi.sheet.personnage .col-3 {
+  width: 25%;
+}
+.mishi.sheet.personnage .col-4 {
+  width: 33.33%;
+}
+.mishi.sheet.personnage .col-5 {
+  width: 41.66%;
+}
+.mishi.sheet.personnage .col-6 {
+  width: 50%;
+}
+.mishi.sheet.personnage .col-7 {
+  width: 58.33%;
+}
+.mishi.sheet.personnage .col-8 {
+  width: 66.66%;
+}
+.mishi.sheet.personnage .col-9 {
+  width: 75%;
+}
+.mishi.sheet.personnage .col-10 {
+  width: 83.33%;
+}
+.mishi.sheet.personnage .col-11 {
+  width: 91.66%;
+}
+.mishi.sheet.personnage .col-12 {
+  width: 100%;
+}
+.mishi.sheet.personnage * {
+  box-sizing: border-box;
+}

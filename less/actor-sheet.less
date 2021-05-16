@@ -1,0 +1,53 @@
+.mishi.sheet.personnage {
+    .stat-css {
+        border: none;
+        background: none;
+    }
+
+    .stat-css:hover, .stat-css:focus {
+        background: rgba(0, 0, 0, 0.05); 
+    }
+
+    .text-flow {
+        overflow: hidden;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    .text-flow:hover {
+        overflow: hidden;
+        display: block;
+        text-overflow: none;
+        -webkit-line-clamp: none;
+        -webkit-box-orient: initial;
+    }
+
+    .row {
+        display: flex;
+        width: 100%;
+    }
+
+    .row::after {
+        clear: both;
+        content: "";
+    }
+
+    .col-1 {width: 8.33%};
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    * {
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="sheet-card {{data.type}}" data-type="{{data.type}}">
+    <div class="item-card item" data-item-id="{{_id}}">
+        <h2>{{name}}</h2>
+        {{data.Description}}
+    </div>
+    <div class="item-table">
+        <table>
+            {{#if data.Jet}}
+            <tr style="text-align: center;">
+                <th>Jet</th>
+                <td>[[{{data.Jet}}]] succès</td>
+            </tr>
+            {{/if}}
+            {{#if data.Degats}}
+            <tr style="text-align: center;">
+                <th>Dégâts</th>
+                <td>[[{{data.Degats}}]]</td>
+            </tr>
+            {{/if}}
+            {{#if data.Cout}}
+            <tr style="text-align: center;">
+                <th>Coût</th>
+                <td>{{data.Cout}} PM</td>
+            </tr>
+            {{/if}}
+        </table>
+    </div>
+</div>

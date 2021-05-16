@@ -1,0 +1,20 @@
+<div class="sheet-card">
+    <div class="class-table">
+        <div>
+            <i>{{cpName.description}}</i>
+        </div>
+        <table>
+            <tr style="text-align: center;">
+                <th>Jet</th>
+                <td>[[1d100]]/[[{{seuil}}]]</td>
+            </tr>
+            {{#if (eq cost "floor()")}}
+            {{else}}
+            <tr style="text-align: center;">
+                <th>Coût</th>
+                <td>[[{{cost}}]] PM</td>
+            </tr>
+            {{/if}}
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
+        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+    </header>
+    <nav class="tabs" data-group="primary-tabs">
+        <a class="item" data-tab="statistiques">Statistiques</a>
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="sorts">Sorts</a>
+    </nav>
+    <section class="content">
+        <div class="tab" data-tab="statistiques" data-group="primary-tabs">
+            {{> "systems/mishi/templates/partials/character-stat-block.hbs"}}
+        </div>
+        <div class="tab" data-tab="description" data-group="primary-tabs">
+            {{> "systems/mishi/templates/partials/character-desc-block.hbs"}}
+        </div>
+        <div class="tab" data-tab="sorts" data-group="primary-tabs">
+            {{> "systems/mishi/templates/partials/character-skills-block.hbs"}}
+        </div>
+    </section>
+</form>

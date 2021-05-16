@@ -1,0 +1,33 @@
+<div class="sheet-card">
+    <div class="class-table">
+        <div>
+            <h2>{{Name}}</h2>
+        </div>
+        <div>
+            {{Description}}
+        </div>
+        <table>
+            {{#if Seuil}}
+            <tr style="text-align: center;">
+                <th>Jet</th>
+                <td>[[1d100]]/[[{{Seuil}}]]</td>
+            </tr>
+            {{/if}}
+            {{#if Degats}}
+            <tr style="text-align: center;">
+                <th>Dégâts</th>
+                <td>[[{{Degats}}]]</td>
+            </tr>
+            {{/if}}
+            {{#if Cout}}
+            <tr style="text-align: center;">
+                <th>Coût</th>
+                <td>[[{{Cout}}]] PM</td>
+            </tr>
+            {{/if}}
+        </table>
+        <div>
+            <i>{{Effets}}</i>
+        </div>
+    </div>
+</div>

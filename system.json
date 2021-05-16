@@ -1,0 +1,12 @@
+{
+    "name": "Mishi",
+    "title": "Système Mishi",
+    "description": "Système de jeu adapté de l'AtaeZora pour X'e Plora.",
+    "version": "1.0.0",
+    "author": "Atae Kurri",
+    "esmodules": ["mishi.js"],
+    "styles": ["less/mishi.css"],
+    "initiative": "1d100",
+    "gridDistance": 10,
+    "gridUnits": "m"
+  }

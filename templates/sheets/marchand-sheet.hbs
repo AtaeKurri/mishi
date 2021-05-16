@@ -1,0 +1,142 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
+        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+    </header>
+    <section>
+        {{#if owner}}
+        <h1>Statistiques</h1>
+        <table>
+            <tr>
+                <th>Fiya</th>
+                <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.SOC.value}}">SOC</a>{{else}}SOC{{/if}}</th>
+                <th>{{#if owner}}<a class="stats-test" data-seuil="{{data.SAV.value}}">SAV</a>{{else}}SAV{{/if}}</th>
+            </tr>
+            <tr>
+                <td style="padding-left: 5px; padding-right: 5px;">
+                    <input name="data.fiya" type="text" value="{{data.fiya}}" />
+                </td>
+                <td style="padding-left: 5px; padding-right: 5px;">
+                    <input name="data.SOC.value" type="text" value="{{data.SOC.value}}" data-dtype="Number" />
+                </td>
+                <td style="padding-left: 5px; padding-right: 5px;">
+                    <input name="data.SAV.value" type="text" value="{{data.SAV.value}}" data-dtype="Number" />
+                </td>
+            </tr>
+        </table>
+        {{/if}}
+        <h1>Inventaire du marchand</h1>
+        <nav class="tabs" data-group="primary-tabs">
+            <a class="item" data-tab="armes">Armes</a>
+            <a class="item" data-tab="armures">Armures</a>
+            <a class="item" data-tab="accessoires">Accessoires</a>
+            <a class="item" data-tab="objets">Objets</a>
+        </nav>
+        <section class="content">
+            <div class="tab" data-tab="armes" data-group="primary-tabs" style="width: 100%;">
+                <table>
+                    <tr>
+                        <th style="padding-left: 5px; padding-right: 5px; font-size: larger;">Armes</th>
+                    </tr>
+                    {{#each armes as |arme id|}}
+                    <tr>
+                        <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                            <div class="item" data-item-id="{{arme._id}}">
+                                <input class="inline-edit" style="width: 5%;" data-field="data.Quantite" type="text" value="{{arme.data.Quantite}}" data-dtype="Number" />
+                                <b style="color: #{{getRarity arme.data.Rareté}};">{{arme.name}} <i style="font-size: 10px">({{arme.data.Rareté}})</i></b>
+                                <a class="item-delete" data-item-id="{{arme._id}}">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <p>Prix : <b>{{arme.data.Prix}}</b></p>
+                            </div>
+                            <div>
+                                <p><i>{{arme.data.Description}}</i></p>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="tab" data-tab="armures" data-group="primary-tabs" style="width: 100%;">
+                <table>
+                    <tr>
+                        <th style="padding-left: 5px; padding-right: 5px; font-size: larger;">Armures</th>
+                    </tr>
+                    {{#each armures as |armure id|}}
+                    <tr>
+                        <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                            <div class="item" data-item-id="{{armure._id}}">
+                                <input class="inline-edit" style="width: 5%;" data-field="data.Quantite" type="text" value="{{armure.data.Quantite}}" data-dtype="Number" />
+                                <b style="color: #{{getRarity armure.data.Rareté}};">{{armure.name}} <i style="font-size: 10px">({{armure.data.Rareté}})</i></b>
+                                <a class="item-delete" data-item-id="{{armure._id}}">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <p>Prix : <b>{{armure.data.Prix}}</b></p>
+                            </div>
+                            <div>
+                                <p><i>{{armure.data.Description}}</i></p>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="tab" data-tab="accessoires" data-group="primary-tabs" style="width: 100%;">
+                <table>
+                    <tr>
+                        <th style="padding-left: 5px; padding-right: 5px; font-size: larger;">Accessoires</th>
+                    </tr>
+                    {{#each accessoires as |accessoire id|}}
+                    <tr>
+                        <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                            <div class="item" data-item-id="{{accessoire._id}}">
+                                <input class="inline-edit" style="width: 5%;" data-field="data.Quantite" type="text" value="{{accessoire.data.Quantite}}" data-dtype="Number" />
+                                <b style="color: #{{getRarity accessoire.data.Rareté}};">{{accessoire.name}} <i style="font-size: 10px">({{accessoire.data.Rareté}})</i></b>
+                                <a class="item-delete" data-item-id="{{accessoire._id}}">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <p>Prix : <b>{{accessoire.data.Prix}}</b></p>
+                            </div>
+                            <div>
+                                <p><i>{{accessoire.data.Description}}</i></p>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="tab" data-tab="objets" data-group="primary-tabs" style="width: 100%;">
+                <table>
+                    <tr>
+                        <th style="padding-left: 5px; padding-right: 5px; font-size: larger;">Objets</th>
+                    </tr>
+                    {{#each objets as |objet id|}}
+                    <tr>
+                        <td style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                            <div class="item" data-item-id="{{objet._id}}">
+                                <input class="inline-edit" style="width: 5%;" data-field="data.Quantite" type="text" value="{{objet.data.Quantite}}" data-dtype="Number" />
+                                <b style="color: #{{getRarity objet.data.Rareté}};">{{objet.name}} <i style="font-size: 10px">({{objet.data.Rareté}})</i></b>
+                                <a class="item-delete" data-item-id="{{objet._id}}">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <p>Prix : <b>{{objet.data.Prix}}</b></p>
+                            </div>
+                            <div>
+                                <p><i>{{objet.data.Description}}</i></p>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+        </section>
+    </section>
+</form>

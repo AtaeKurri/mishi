@@ -1,0 +1,29 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <div>
+        <p><b>Magie</b></p>
+        <select name="data.Magie">
+            {{#select data.Magie}}
+            {{#each config.Magies as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <p><b>Description</b></p>
+        <textarea name="data.Description" rows="10" placeholder="Description">{{{item.data.Description}}}</textarea>
+        <p><b>Rareté</b></p>
+        <select name="data.Rareté" style="width: 99.3%;">
+            {{#select data.Rareté}}
+            {{#each config.Rarity as |name type|}}
+            <option value="{{type}}">{{type}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <p><b>Prix</b></p>
+        <input name="data.Prix" type="text" value="{{item.data.Prix}}" placeholder="Prix"/>
+        <p><b>Actif ?</b> <input type="checkbox" name="data.Equipe" value="{{item.data.Equipe}}" data-dtype="Boolean" {{checked item.data.Equipe}}/></p>
+    </div>
+</form>

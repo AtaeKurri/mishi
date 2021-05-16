@@ -1,0 +1,16 @@
+<form>
+    <div class="form-group">
+        <label>{{costName}}</label>
+        {{#if (eq costName "Technomancie")}}
+        <select name="modificateur" style="width: 99.3%;">
+            {{#select modificateur}}
+            {{#each technomancieoption as |name type|}}
+            <option value="{{name}}">{{type}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        {{else}}
+        <input type="text" name="modificateur" value="0" />
+        {{/if}}
+    </div>
+</form>
